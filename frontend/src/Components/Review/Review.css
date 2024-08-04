@@ -1,0 +1,111 @@
+.review{
+    width: 100%;
+background-position: center;
+    background-image: 
+    url('../../assets/home3.jpg');
+    background-size:cover;
+    background-repeat: no-repeat;
+    padding: 20px 10px;
+    color: white;
+    display: flex;
+    align-items: center;
+  justify-content: space-evenly;
+    flex-direction: column;
+  
+}
+
+.review-top{
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    flex-direction: column;
+    width: 100%;
+}
+.review-top img{
+    width: 70px;
+    margin-bottom: 10px;
+}
+.review-top p {
+    font-size: 35px;
+    font-weight: 400;
+    color: black;
+}
+.down {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+form {
+    padding-top: 1.25rem;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    padding-bottom: 1.25rem;
+    width:600px;
+   
+   
+  }
+
+input {
+    background-color: transparent; /* bg-slate-700 */
+    height: 50px;
+  width: 100%;
+    border-radius: 10px;
+    padding: 15px 15px;
+    color: white;
+    font-size: 18px;
+    margin-bottom: 20px;
+    border: 2px solid whitesmoke;
+    outline: none;
+    backdrop-filter: blur(2px); /* Adjust the blur radius as needed */
+    -webkit-backdrop-filter: blur(2px); /* For better browser compatibility */
+  
+}
+
+textarea{
+    height: 400px;
+    width: 100%;
+    background-color:transparent;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 10px;
+    font-size: 18px;
+    border: 2px solid whitesmoke;
+    outline: none;
+
+
+    backdrop-filter: blur(2px); /* Adjust the blur radius as needed */
+    -webkit-backdrop-filter: blur(2px); /* For better browser compatibility */
+  
+
+  }
+
+label{
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+ form button{ 
+    width: 100%;
+    margin-top: 20px; 
+   width: 100%;
+}
+
+@media (max-width: 400px){
+  .review{
+    width: 120%;
+  }
+  
+  .review-top p{
+    font-size: 20px;
+    font-size: 500;
+  }
+  .review-top img{
+    width: 50px;
+  }
+  .review button {
+    margin-left: 70px;
+  }
+ }

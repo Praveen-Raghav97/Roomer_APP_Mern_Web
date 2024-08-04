@@ -1,0 +1,93 @@
+.card-list{
+    width: 100%;
+    background: url(../../assets/bg1.jpg);
+    background-size: cover;
+    background-position: center;
+    padding: 5% 5%;
+   
+}
+.top{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-direction: row;
+    color: white;
+    
+    margin-bottom: 2.5rem /* 40px */;
+
+}
+.topbtn2{
+    color: black;
+    width: 100px;
+    background: white;
+    padding: 8px 12px;
+    padding-top: 0.50rem /* 4px */;
+    padding-bottom: 0.50rem /* 4px */;
+    padding-left: 1.5rem /* 16px */;
+    padding-right: 1.5rem /* 16px */;
+    border-radius: 0.125rem /* 2px */;
+    cursor: pointer;
+}
+.topbtn{
+    padding-top: 0.50rem /* 4px */;
+    padding-bottom: 0.50rem /* 4px */;
+    padding-left: 1.5rem /* 16px */;
+    padding-right: 1.5rem /* 16px */;
+    border-radius: 0.125rem /* 2px */;
+    color: white;
+    background-color: black;
+    width: 100px;
+    cursor: pointer;
+}
+
+.allcards{
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+   
+    margin-right: 50px;
+    width: 100%;
+    padding: 20px 10px;
+   
+}
+
+hr{
+   height: 3px;
+    color: navy;
+    background-color:black;
+    margin-bottom: 40px;
+    width: 100%;
+    
+}
+
+
+.back{
+    position: absolute;
+    top: 10%;
+    right: 5%;
+   margin-bottom: 5%;
+    padding: 15px;
+    width: 50px;
+  
+    border-radius: 50%;
+    cursor: pointer;
+    background:black;
+
+
+}
+.back{
+    right: 0;
+    left: 5%;
+}
+@media (min-width: 1280px) {
+   
+}
+
+@media (max-width: 700px) {
+    .next-btn,.back-btn{
+    top: 100px;
+    }
+}

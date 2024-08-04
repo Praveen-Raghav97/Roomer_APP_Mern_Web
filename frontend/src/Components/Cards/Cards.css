@@ -1,0 +1,79 @@
+.cards3{
+    height: 450px;
+    width: 290px;
+    border-radius: 5px;
+    border: 1px solid black;
+    display: flex;
+  cursor: pointer;
+  background-color: white;
+    align-items: center;
+    flex-direction: column;
+    padding: 7px 10px;
+    text-align: start;
+}
+.icon{
+    width: 22px; 
+    margin-left: 2px;
+
+}
+
+
+.information1{
+width: 100%;
+flex-direction: column;
+justify-content:space-between;
+
+color: gray;
+padding: 5px 0px;
+
+}
+.information1 h4{
+    color: black;
+    font-size: 25px;
+    font-weight: 300;
+   margin-bottom: 15px;
+}
+hr{
+    height: 2px;
+    width: 100%;
+    color: gainsboro;
+    background-color: gray;
+    margin-top: 25px;
+}
+.information{
+    width:100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content:space-around;
+   
+    color: gray;
+    margin-bottom: 20px;
+    
+    }
+
+
+p{
+    color: gray;
+    font-size: 20px;
+}
+
+
+.information1 p{
+    font-size: 18px;
+}
+.img1{
+ margin-bottom: 10px;
+}
+img{
+    width: 280px;
+    border-radius: 5px;
+
+
+}
+
+ img:hover{
+    background-color: rgba(0, 0, 255, 0.5);
+    opacity: 0.6;
+    transition: opacity 0.3s ease-in ;
+}

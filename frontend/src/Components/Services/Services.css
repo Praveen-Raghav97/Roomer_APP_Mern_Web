@@ -1,0 +1,150 @@
+.services{
+    display: flex;
+    align-items: center;
+    justify-content:space-evenly;
+    flex-direction: column;
+    width: 90%;
+ 
+   margin-bottom: 100px;
+
+    flex-direction: column;
+ 
+}
+
+.cons{
+    flex-basis: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+   background-color: white;
+   gap: 10px;
+   padding: 5px 5px;
+}
+
+.box-left{
+    flex-basis: 33%;
+    text-align: center;
+    height: 600px;
+    
+}
+.box-center{
+    flex-basis: 33%;
+    text-align: center;
+    height: 600px;
+}
+.box-right{
+    flex-basis: 33%;
+    text-align: center;
+    height: 600px;
+}
+.cons img{
+    width: 400px;
+    border-radius: 10px;
+    background-size: cover;
+    cursor: pointer;
+}
+
+.cons h3{
+   
+    font-size: 20px;
+    font-weight: 500;
+    color: #000f38;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.cons p{
+    font-size: 18px;
+    color:gray;
+}
+.services-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex-basis: 100%;
+    text-align: center;
+    padding-bottom: 50px;
+    padding-left: 100px;
+    width: 100%;
+    color: gray;
+    font-size: 18px;
+     margin-top: 10px;
+ 
+
+ 
+}
+.services-header h3{
+  
+   
+    text-align: center;
+  
+    font-size: 40px;
+    font-weight: 500;
+    color: #000f38;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.services-header img{
+    width: 100px;
+}
+
+.cons img:hover{
+    background-color: rgba(0, 0, 255, 0.5);
+    opacity: 0.6;
+    transition: opacity 0.3s ease-in ;
+}
+
+            /*----------media query----------*/
+            @media (max-width: 840px){
+                .services{
+                justify-content: space-evenly;
+                 margin-top: 100px;
+                }
+                .services-header{
+                    flex-basis: 100%;
+                    margin: 20px;
+                   margin-top: 700px;
+                   width: 100%;
+                   margin-left: 90px;
+                  text-wrap: wrap;
+                  padding: 0px 0px;
+                   }
+                   .services-header img{
+                    width: 100px;
+                   }
+                
+                   .cons{
+                    flex-basis: 100%;
+                    padding: 0 20px;
+                    flex-direction:column;
+                    order: 2;
+                   
+                   }
+                   .cons img{
+                    width: 350px;
+                   
+                   }
+
+                   .box-left{
+                    flex-basis: 100%;
+                    width: 90%;
+                    margin: 20px;
+                    text-align: start;
+                   }
+                   .box-center{
+                    flex-basis: 100%;
+                    width: 90%;
+                    margin: 20px;
+                   text-align: start;
+                   }
+                   .box-right{
+                    flex-basis: 100%;
+                    width: 90%;
+                    text-align: start;
+                   }
+
+                   
+              
+             
+         }

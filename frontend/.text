@@ -1,0 +1,120 @@
+
+//SignUp
+import { connectToDatabase } from '../../utils/mongodb';
+import bcrypt from 'bcrypt';
+
+export default async function handler(req, res) {
+  if (req.method !== 'POST') {
+    return res.status(405).json({ message: 'Method not allowed' });
+  }
+
+  const { name, email, password } = req.body;
+
+  const { db } = await connectToDatabase();
+
+  const user = await db.collection('users').findOne({ email });
+
+  if (user) {
+    return res.status(400).json({ message: 'User already exists' });
+  }
+
+  const hashedPassword = await bcrypt.hash(password, 10);
+
+  await db.collection('users').insertOne({
+    name,
+    email,
+    password: hashedPassword,
+  });
+
+  res.status(201).json({ message: 'User created successfully' });
+}
+
+
+
+
+
+//Login Page
+
+import { connectToDatabase } from '../../utils/mongodb';
+import bcrypt from 'bcrypt';
+import jwt from 'jsonwebtoken';
+
+export default async function handler(req, res) {
+  if (req.method !== 'POST') {
+    return res.status(405).json({ message: 'Method not allowed' });
+  }
+
+  const { email, password } = req.body;
+
+  const { db } = await connectToDatabase();
+
+  const user = await db.collection('users').findOne({ email });
+
+  if (!user) {
+    return res.status(400).json({ message: 'Invalid email or password' });
+  }
+
+  const isPasswordValid = await bcrypt.compare(password, user.password);
+
+  if (!isPasswordValid) {
+    return res.status(400).json({ message: 'Invalid email or password' });
+  }
+
+  const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET, {
+    expiresIn: '1h',
+  });
+
+  res.status(200).json({ token });
+}
+
+
+
+
+
+
+
+
+// Otp Varification
+const express = require('express');
+const bodyParser = require('body-parser');
+const cors = require('cors');
+const twilio = require('twilio');
+
+const app = express();
+app.use(bodyParser.json());
+app.use(cors());
+
+const accountSid = 'YOUR_TWILIO_ACCOUNT_SID';
+const authToken = 'YOUR_TWILIO_AUTH_TOKEN';
+const client = new twilio(accountSid, authToken);
+
+let otpStore = {}; // Store OTPs temporarily
+
+app.post('/send-otp', (req, res) => {
+  const { phoneNumber } = req.body;
+  const otp = Math.floor(100000 + Math.random() * 900000).toString();
+  otpStore[phoneNumber] = otp;
+
+  client.messages
+    .create({
+      body: `Your OTP is ${otp}`,
+      from: 'YOUR_TWILIO_PHONE_NUMBER',
+      to: phoneNumber,
+    })
+    .then((message) => res.json({ success: true }))
+    .catch((error) => res.status(500).json({ success: false, error }));
+});
+
+app.post('/verify-otp', (req, res) => {
+  const { phoneNumber, otp } = req.body;
+  if (otpStore[phoneNumber] === otp) {
+    delete otpStore[phoneNumber]; // Clear OTP after verification
+    res.json({ success: true });
+  } else {
+    res.status(400).json({ success: false, error: 'Invalid OTP' });
+  }
+});
+
+app.listen(5000, () => {
+  console.log('Server is running on port 5000');
+});

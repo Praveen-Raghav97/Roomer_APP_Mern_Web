@@ -1,0 +1,90 @@
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color:transparent;
+    color: whitesmoke;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 8px 0px;
+    width: 90%;
+    z-index: 10;
+    backdrop-filter: blur(20px); /* Adjust the blur radius as needed */
+    -webkit-backdrop-filter: blur(22px); /* For better browser compatibility */
+  
+}
+.logo{
+    width: 180px;
+}
+nav h1{
+    font-size: 30px;
+    font-weight: 500;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+nav ul li{
+    display:inline-block;
+    margin: 5px 20px;
+    font-size: 18px;
+    list-style: none;
+    cursor: pointer;
+
+}
+.menu-icon{
+    display: none;
+}
+.dark-nav{
+    background-color: rgb(7, 41, 75);
+    transition: 0.5s;
+}
+
+/*Media Query */
+ @media (max-width: 1000px){
+         .logo{
+            width: 140px;
+         }
+
+         nav ul li{
+            margin: 10px 15px;
+         }
+ }
+ @media (max-width: 880px){
+           nav{
+            padding: 15px 0;
+           }
+
+           nav ul {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+            width: 200px;
+            padding-top: 70px;
+            transition: 0.5s;
+            background:whitesmoke;
+            color: black;
+
+           }
+
+           nav ul li {
+            display: block;
+            margin:25px 40px;
+           
+           }
+
+           .menu-icon{
+            width: 30px;
+            display: block;
+            cursor: pointer;
+           }
+           .hide-mobile-menu{
+            right: -200px;
+           }
+ }
+
+ @media (max-width: 500px){
+    nav{
+     padding: 0px 0px;
+    }
+}

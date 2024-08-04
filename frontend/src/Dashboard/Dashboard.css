@@ -1,0 +1,23 @@
+.dash-container{
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(#08003ab3,rgba(8,0,58,0.3)),
+    url(../assets/bg6.jpg); 
+    background-size: cover;
+    background-position: center;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 0;
+    position: relative;
+
+    
+}
+
+@media (max-width:600px) {
+    .dash-container{
+     width: 110%;
+    }
+   
+   }

@@ -1,0 +1,32 @@
+.footer{
+    height: 60px;
+    text-align: center;
+    margin-bottom: 10px;
+    background-color: rgb(10, 38, 62);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: cursive;
+}
+.footer h1{
+    color: rgba(255, 255, 255, 0.858);
+    font-family: cursive;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+
+@media (max-width: 840px){
+    .footer h1{
+        font-size: 19px;
+       
+       
+    }
+}
+
+@media (max-width: 400px){
+   .footer {
+    width: 120%;
+    height: 60px;
+   }
+ }
